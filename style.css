@@ -1,0 +1,19 @@
+body {
+  height: 100vh;
+  background-color: rgb(169, 194, 30);
+}
+.calendar {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 그림자 효과 추가 */
+  border-radius: 10px; /* 둥근 모서리 적용 */
+  padding: 1% 5% 5% 5%;
+}
+
+.weekdays {
+  display: flex;
+  flex-wrap: nowrap; /* 줄바꿈 방지 */
+}
