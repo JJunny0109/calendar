@@ -17,3 +17,16 @@ body {
   display: flex;
   flex-wrap: nowrap; /* 줄바꿈 방지 */
 }
+
+.dates {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.date {
+  width: calc(100% / 7); /* 7개의 열로 나누어 날짜 정렬 */
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
