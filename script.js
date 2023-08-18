@@ -12,8 +12,21 @@ const today = {
   day: new Date().toLocaleString('en-us', {weekday: 'long'}),
 }
 
-// Get the last day of the month
-const lastDay = new Date(today.year, today.monthNum + 1, 0).getDate();
+// Get the index of the this month
+const thisMonth = {
+  monthNum: new Date().getMonth(),
+  month: new Date().toLocaleString('en-us', {month: 'long'}),
+  firstDay: new Date(today.year, today.monthNum, 1).getDay(),
+  lastDay: new Date(today.year, today.monthNum + 1, 0).getDay(),
+  lastDate: new Date(today.year, today.monthNum + 1, 0).getDate(),
+}
+
+// 첫 번째 날 이전에 빈 공간을 만듭니다.
+for (let i = 0; i < thisMonth.firstDay; i++) {
+  const placeholderDiv = document.createElement("div");
+  placeholderDiv.classList.add("date", "empty");
+  datesArea.appendChild(placeholderDiv);
+}
 
 // function to get the month and full date of the today then update the calendar header
 function updateCalendarHeader() {
@@ -24,7 +37,7 @@ updateCalendarHeader();
 
 // function to update the calendar body
 function updateCalendarBody() {
-  for (let i = 1; i <= lastDay; i++) {
+  for (let i = 1; i <= thisMonth.lastDate; i++) {
     const dateDiv = document.createElement("div");
     dateDiv.classList.add("date");
     dateDiv.textContent = i;
