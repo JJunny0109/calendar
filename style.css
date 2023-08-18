@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-color: rgb(169, 194, 30);
+  background-color: #001F3F;
 }
 .container {
   background-color: white;
@@ -16,20 +16,26 @@ body {
 .container h1 {
   text-align: center;
   font-size: 3em;
-  color: blueviolet;
 }
+
 
 .month {
   text-align: center;
   align-items: center;
-  padding: 10px;
-  background-color: blueviolet;
+  padding: 3%;
+  background-color: rgba(240, 80, 70);
   border-radius: 5px 5px 0 0;
-  color: aliceblue;
+  color: #ffffff;
 }
 
 .month h2 {
-  font-size: 2em;
+  font-size: 2.5em;
+}
+
+.lower {
+  border: 2px solid #CCCCCC;
+  border-top: #ffffff00;
+  border-radius: 0 0 5px 5px;
 }
 
 .weekdays {
@@ -49,8 +55,6 @@ body {
 .dates {
   display: flex;
   flex-wrap: wrap;
-  color: aliceblue;
-  background-color: black;
   border-radius: 0 0 5px 5px;
 }
 
@@ -60,4 +64,9 @@ body {
   text-align: center;
   padding: 10px;
 
+}
+
+.today {
+  background-color: rgba(240, 80, 70);
+  color: white;
 }

@@ -30,8 +30,8 @@ for (let i = 0; i < thisMonth.firstDay; i++) {
 
 // function to get the month and full date of the today then update the calendar header
 function updateCalendarHeader() {
-  monthArea.querySelector("h2").innerHTML = today.month;
-  monthArea.querySelector("p").innerHTML = `${today.day}, ${today.date} ${today.month} ${today.year}`;
+  monthArea.querySelector("h2").innerHTML = `${today.month} ${today.year}`;
+  // monthArea.querySelector("p").innerHTML = `${today.day}, ${today.date} ${today.month} ${today.year}`;
 }
 updateCalendarHeader();
 
@@ -40,6 +40,7 @@ function updateCalendarBody() {
   for (let i = 1; i <= thisMonth.lastDate; i++) {
     const dateDiv = document.createElement("div");
     dateDiv.classList.add("date");
+    if(i === today.date) dateDiv.classList.add("today");
     dateDiv.textContent = i;
     datesArea.appendChild(dateDiv);
   }
